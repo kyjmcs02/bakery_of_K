@@ -165,6 +165,8 @@ html, body, *, a, button, a:hover, button:hover,
 
 .project_screen { width: 100%; height: auto; display: block; }
 
+.project_screen_box img { width: 100%; height: auto; display: block; }
+
 .project_contents_text_wrap { width: 740px; position: absolute; right: 240px; bottom: 21px; text-align: right; z-index: 5;}
 
 
@@ -172,6 +174,7 @@ html, body, *, a, button, a:hover, button:hover,
 
 .view_box img { width: 40px; height: auto; display: block; }
 
+/* project 끝 */
 
 
 
