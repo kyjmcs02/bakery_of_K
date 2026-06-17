@@ -1,0 +1,150 @@
+/* font title */
+.contents_title_xxsmall { font-family: "DM Serif Display", serif; font-size: 25px; font-weight: 400; letter-spacing: -1px; color: #333;}
+.contents_title_xsmall { font-family: "DM Serif Display", serif; font-size: 30px; font-weight: 400; letter-spacing: -1px; color: #333;}
+.contents_title_small { font-family: "DM Serif Display", serif; font-size: 80px; font-weight: 400; letter-spacing: -2px; color: #333;}
+.contents_title_medium { font-family: "DM Serif Display", serif; font-size: 100px; font-weight: 400; letter-spacing: -1px; color: #333;}
+.contents_title_large { font-family: "DM Serif Display", serif; font-size: 125px; font-weight: 400; letter-spacing: -1px; color: #333;}
+.contents_title_xlarge { font-family: "DM Serif Display", serif; font-size: 150px; font-weight: 400; color: #333;}
+.contents_title_xxlarge { font-family: "DM Serif Display", serif; font-size: 200px; font-weight: 400; color: #333;}
+.contents_title_xxxlarge { font-family: "DM Serif Display", serif; font-size: 330px; font-weight: 400; letter-spacing: -5px; color: #333;}
+/* font article*/
+.contents_article_small { font-size: 12px; font-weight: 300; letter-spacing: -0.5px; color: #333;}
+.contents_article_medium_light { font-size: 16px; font-weight: 300; letter-spacing: -0.5px; color: #333;}
+.contents_article_medium { font-size: 16px; font-weight: 400; letter-spacing: -0.5px; color: #333;}
+.contents_article_lage { font-size: 25px; font-weight: 300; letter-spacing: -1px; color: #333;}
+
+/* main_img_box */
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 크로와상 이미지 박스들 애니메이션 */
+.main_img_01, .main_img_02, .main_img_03, 
+.main_img_04, .main_img_05 {
+    opacity: 0; /* 시작할 때 숨김 */
+    animation: popUp 0.6s ease-out forwards;
+}
+
+/* 등장순서 */
+.main_img_01 { animation-delay: 0.1s; }
+.main_img_02 { animation-delay: 0.3s; }
+.main_img_03 { animation-delay: 0.6s; }
+.main_img_04 { animation-delay: 0.9s; }
+.main_img_05 { animation-delay: 1.2s; }
+
+
+/* 크로와상_05번 흔들리는 동작 정의 */
+@keyframes main_img_05 {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-2.5deg); } /* 왼쪽으로 */
+    50% { transform: rotate(2.5deg); } /* 오른쪽으로 */
+    75% { transform: rotate(-2.5deg); } /* 다시 왼쪽으로 */
+    100% { transform: rotate(0deg); } /* 제자리 */
+}
+
+/* 마지막 빵에 마우스 올렸을 때 실행하기 */
+.main_img_05:hover img {
+    /* animation: [대본이름] [시간] [가속도] [반복여부] */
+    animation: main_img_05 0.6s ease-in-out infinite;
+    cursor: pointer;
+}
+
+/* ksbakery 글씨 몰아두기 */
+.ksbakery_img_wrap .contents_title_xlarge,
+.ksbakery_img_wrap .contents_title_large {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.8s;
+    z-index: 2;
+
+}
+/* 위치 정하기 */
+.ksbakery_img_wrap .warm { left: 40%; top: 42%; transform: rotate(12deg); }
+.ksbakery_img_wrap .morning { left: 30%; top: 45%;transform: rotate(-20deg); }
+.ksbakery_img_wrap .fresh { left: 40%; top: 55%; transform: rotate(10deg); }
+.ksbakery_img_wrap .smile { left: 40%; top: 50%; transform: rotate(10deg); }
+.ksbakery_img_wrap .sweet { left: 40%; top: 55%; transform: rotate(-10deg); }
+.ksbakery_img_wrap .soft { left: 50%; top: 55%; transform: rotate(5deg); }
+
+/* 글씨 퍼지게 하기 */
+.ksbakery:hover .warm { left: 20%; top: 20%; transform: rotate(10deg); }
+.ksbakery:hover .morning { left: 10%; top: 60%; transform: rotate(-20deg); }
+.ksbakery:hover .fresh { left: 50%; top: 40%; transform: rotate(5deg); }
+.ksbakery:hover .smile { left: 35%; top: 70%; transform: rotate(-10deg); }
+.ksbakery:hover .sweet { left: 55%; top: 20%; transform: rotate(-5deg); }
+.ksbakery:hover .soft { left: 65%; top: 65%; transform: rotate(5deg); }
+
+
+
+/* 말풍선 + 베이글 애니메이션 */
+.think_01, .think_02, .think_03, .bagel { opacity: 0; /* 처음에는 안 보이게 숨김 */ }
+
+/* 말풍선 등장 순서 */
+.what_i.on .think_01 { animation: popUp 0.9s ease-out 0.1s forwards; /* what_i에 on이 붙었을 때 첫 번째 말풍선 실행 */ }
+.what_i.on .think_02 { animation: popUp 0.9s ease-out 0.4s forwards; /* 두 번째 말풍선 실행 */ }
+.what_i.on .think_03 { animation: popUp 0.9s ease-out 0.8s forwards; /* 세 번째 큰 말풍선 실행 */ }
+.what_i.on .bagel {  animation: popUp 0.9s ease-out 1.2s forwards, bagelBounce 0.8s ease-in-out 2.1s infinite; /* 베이글 마지막 실행 */}
+
+@keyframes popUp {
+    0% { opacity: 0; /* 시작할 때 안 보임 */ transform: translateY(18px); /* 아래에서 시작 */ }
+    100% { opacity: 1; /* 끝나면 보임 */ transform: translateY(0); /* 원래 위치로 올라옴 */ }
+}
+
+@keyframes bagelBounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+/* menu pick arrow */
+.pick_arrow { animation: pick_arrow 0.8s ease-in-out infinite; }
+
+@keyframes pick_arrow {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+    100% { transform: translateY(0); }
+}
+
+
+
+/* hand_made */
+/* 빵들만 살짝 자동 흔들림 */
+.hand_made a img { animation: bread_wiggle 1.6s ease-in-out infinite;}
+
+/* 빵마다 타이밍만 살짝 다르게 */
+.muji_box img { animation-delay: 0s; }
+
+.loccttane_box img { animation-delay: 0.2s; }
+
+.urbanbrand_box img { animation-delay: 0.4s; }
+
+.food_re_lab_box img { animation-delay: 0.6s; }
+
+.fwee_box img { animation-delay: 0.8s; }
+
+/* 살짝 흔들리는 움직임 */
+@keyframes bread_wiggle {
+    0% { transform: rotate(0deg) translateY(0); }
+
+    25% { transform: rotate(-2deg) translateY(-2px); }
+
+    50% { transform: rotate(2deg) translateY(0); }
+
+    75% { transform: rotate(-1deg) translateY(-1px); }
+
+    100% { transform: rotate(0deg) translateY(0); }
+}
+
+/* 마우스 올리면 빵 살짝 커짐 */
+.hand_made a img {  transition: scale 0.2s ease; transform-origin: center; }
+
+.hand_made a:hover img { scale: 1.08;}
