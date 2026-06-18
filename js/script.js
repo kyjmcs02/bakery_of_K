@@ -46,4 +46,81 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+/* footer */
+
+/* footer */
+
+const footerItems = document.querySelectorAll('footer .bread, footer .ccamdoll_king');
+
+footerItems.forEach(function (item) {
+    let moveX = 0;
+    let moveY = 0;
+    let isDragging = false;
+
+    item.addEventListener('click', function (e) {
+        e.preventDefault();
+    });
+
+    item.addEventListener('pointerdown', function (e) {
+        e.preventDefault();
+
+        isDragging = true;
+        item.classList.add('is_dragging');
+
+        const startMouseX = e.clientX;
+        const startMouseY = e.clientY;
+
+        const startMoveX = moveX;
+        const startMoveY = moveY;
+
+        item.setPointerCapture(e.pointerId);
+
+        item.addEventListener('pointermove', dragMove);
+        item.addEventListener('pointerup', dragEnd);
+        item.addEventListener('pointercancel', dragEnd);
+
+        function dragMove(e) {
+            if (!isDragging) return;
+
+            moveX = startMoveX + e.clientX - startMouseX;
+            moveY = startMoveY + e.clientY - startMouseY;
+
+            item.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        }
+
+        function dragEnd() {
+        isDragging = false;
+        item.classList.remove('is_dragging');
+
+        /* 놓으면 아래로 툭 떨어짐 */
+        moveY = moveY + 80;
+
+        item.style.transform = `translate(${moveX}px, ${moveY}px)`;
+
+        item.removeEventListener('pointermove', dragMove);
+        item.removeEventListener('pointerup', dragEnd);
+        item.removeEventListener('pointercancel', dragEnd);
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });

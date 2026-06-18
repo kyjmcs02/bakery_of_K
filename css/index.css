@@ -148,18 +148,13 @@ html, body, *, a, button, a:hover, button:hover,
 /* hand_made 끝 */
 
 /* project 시작 */
-
 .project { width: 100%; height: 1080px; position: relative; }
 
 .project .contents_title_medium { text-align: center; margin-bottom: 20px; }
 
-.project_img_box {
-    width: 1440px; height: 810px; margin: 0 auto; 
-    border: 8px solid #000; border-radius: 16px; box-sizing: border-box; 
-    overflow: hidden;
-}
+.project_img_box { width: 1440px; height: 810px; margin: 0 auto; border: 8px solid #000; border-radius: 16px; box-sizing: border-box; overflow: hidden; }
 
-.project_screen_box { width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden;  overscroll-behavior: contain; scrollbar-width: none; }
+.project_screen_box { width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; scrollbar-width: none; }
 
 .project_screen_box::-webkit-scrollbar { display: none; }
 
@@ -175,6 +170,44 @@ html, body, *, a, button, a:hover, button:hover,
 .view_box img { width: 40px; height: auto; display: block; }
 
 /* project 끝 */
+
+/* footer 시작 */
+footer { width: 100%; height: 1080px; position: relative; overflow: hidden; }
+
+.footer_main_text_wrap { position: absolute; top: 60px; left: 140px; }
+
+.footer_main_text_wrap .contents_title_xlarge { line-height: 85%; }
+
+.footer_main_text_wrap .contents_article_large { margin-top: 15px; }
+
+.footer_contact_wrap {
+    width: calc(100% - 280px); position: absolute; top: 386px; left: 140px;
+    display: flex; justify-content: space-between; padding-bottom: 4px;
+    border-bottom: 1px solid #333; box-sizing: border-box;
+}
+
+.bread { position: absolute; display: block; transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+
+.bread img { display: block; }
+
+.ccamdoll_king { position: absolute; right: 110px; bottom: 0; display: block; transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+
+.ccamdoll_king img { display: block; }
+
+/* 빵 위치 */
+.bread_01 { left: 81px; bottom: 0; }
+.bread_02 { left: 280px; bottom: 190px; }
+.bread_03 { left: 501px; bottom: 279px; }
+.bread_04 { left: 430px; bottom: 14px; }
+.bread_05 { left: 783px; bottom: 0; }
+.bread_06 { left: 1028px; bottom: 209px; }
+.bread_07 { left: 1101px; bottom: 0; }
+.bread_08 { left: 1251px; bottom: 81px; }
+.bread_09 { right: 447px; bottom: 365px; }
+.bread_10 { right: 96px; bottom: 263px; }
+
+/* footer 끝 */
+
 
 
 

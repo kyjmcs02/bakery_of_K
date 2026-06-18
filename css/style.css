@@ -11,7 +11,7 @@
 .contents_article_small { font-size: 12px; font-weight: 300; letter-spacing: -0.5px; color: #333;}
 .contents_article_medium_light { font-size: 16px; font-weight: 300; letter-spacing: -0.5px; color: #333;}
 .contents_article_medium { font-size: 16px; font-weight: 400; letter-spacing: -0.5px; color: #333;}
-.contents_article_lage { font-size: 25px; font-weight: 300; letter-spacing: -1px; color: #333;}
+.contents_article_large { font-size: 25px; font-weight: 300; letter-spacing: -1px; color: #333;}
 
 /* main_img_box */
 @keyframes popUp {
@@ -117,34 +117,148 @@
 
 
 /* hand_made */
-/* 빵들만 살짝 자동 흔들림 */
-.hand_made a img { animation: bread_wiggle 1.6s ease-in-out infinite;}
+/* a는 커지는 역할 */
+.hand_made a {
+    transition: transform 0.25s ease;
+    transform-origin: center;
+}
 
-/* 빵마다 타이밍만 살짝 다르게 */
+.hand_made a:hover {
+    transform: scale(1.08);
+}
+
+/* img는 흔들리는 역할 */
+.hand_made a img {
+    animation: bread_wiggle 1.6s ease-in-out infinite;
+}
+
+/* 빵마다 타이밍만 다르게 */
 .muji_box img { animation-delay: 0s; }
-
 .loccttane_box img { animation-delay: 0.2s; }
-
 .urbanbrand_box img { animation-delay: 0.4s; }
-
 .food_re_lab_box img { animation-delay: 0.6s; }
-
 .fwee_box img { animation-delay: 0.8s; }
 
 /* 살짝 흔들리는 움직임 */
 @keyframes bread_wiggle {
     0% { transform: rotate(0deg) translateY(0); }
-
     25% { transform: rotate(-2deg) translateY(-2px); }
-
     50% { transform: rotate(2deg) translateY(0); }
-
     75% { transform: rotate(-1deg) translateY(-1px); }
-
     100% { transform: rotate(0deg) translateY(0); }
 }
 
-/* 마우스 올리면 빵 살짝 커짐 */
-.hand_made a img {  transition: scale 0.2s ease; transform-origin: center; }
 
-.hand_made a:hover img { scale: 1.08;}
+
+/* footer */
+
+/* 푸터 빵 / 깜돌킹 기본 */
+footer .bread,
+footer .ccamdoll_king {
+    cursor: grab;
+    will-change: transform;
+    touch-action: none;
+    transition: transform 0.45s ease-out;
+}
+
+/* 푸터 빵 이미지 흔들림 */
+footer .bread img {
+    display: block;
+    pointer-events: none;
+    animation-name: footer_bread_wiggle;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/* 빵마다 흔들리는 속도 / 타이밍 다르게 */
+footer .bread_01 img { animation-duration: 1.7s; animation-delay: 0s; }
+footer .bread_02 img { animation-duration: 2.1s; animation-delay: 0.2s; }
+footer .bread_03 img { animation-duration: 1.9s; animation-delay: 0.4s; }
+footer .bread_04 img { animation-duration: 2.3s; animation-delay: 0.1s; }
+footer .bread_05 img { animation-duration: 1.8s; animation-delay: 0.5s; }
+footer .bread_06 img { animation-duration: 2.2s; animation-delay: 0.3s; }
+footer .bread_07 img { animation-duration: 1.6s; animation-delay: 0.6s; }
+footer .bread_08 img { animation-duration: 2.4s; animation-delay: 0.15s; }
+footer .bread_09 img { animation-duration: 1.95s; animation-delay: 0.35s; }
+footer .bread_10 img { animation-duration: 2.15s; animation-delay: 0.55s; }
+
+/* 깜돌킹만 천천히 계속 빙글 */
+footer .ccamdoll_king img {
+    display: block;
+    pointer-events: none;
+    animation-name: ccamdoll_spin;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: center center;
+}
+
+@keyframes ccamdoll_spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 드래그 중 */
+footer .bread.is_dragging,
+footer .ccamdoll_king.is_dragging {
+    cursor: grabbing;
+    z-index: 999;
+    transition: none;
+}
+
+/* 드래그 중에는 흔들림 멈춤 */
+footer .bread.is_dragging img,
+footer .ccamdoll_king.is_dragging img {
+    animation: none;
+}
+
+/* 빵 살짝 흔들림 */
+@keyframes footer_bread_wiggle {
+    0% {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    25% {
+        transform: rotate(-1.2deg) translateY(-1px);
+    }
+
+    50% {
+        transform: rotate(1.2deg) translateY(0);
+    }
+
+    75% {
+        transform: rotate(-0.8deg) translateY(-1px);
+    }
+
+    100% {
+        transform: rotate(0deg) translateY(0);
+    }
+}
+
+/* 깜돌킹 더 크게 흔들림 */
+@keyframes ccamdoll_wiggle {
+    0% {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    25% {
+        transform: rotate(-5deg) translateY(-4px);
+    }
+
+    50% {
+        transform: rotate(5deg) translateY(0);
+    }
+
+    75% {
+        transform: rotate(-3deg) translateY(-3px);
+    }
+
+    100% {
+        transform: rotate(0deg) translateY(0);
+    }
+}
