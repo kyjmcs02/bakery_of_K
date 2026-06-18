@@ -23,13 +23,9 @@
 
     <!-- css -->
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
-
-    <!-- script -->
-    <script src="js/script.js" defer></script>
-
-
 
 </head>
 
@@ -53,7 +49,7 @@
 
     </section><!-- main -->
 
-    <section class="ksbakery">
+    <section class="ksbakery" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
 
         <div class="ksbakery_wrap">
 
@@ -131,7 +127,7 @@
 
     <section class="menu">
 
-        <div class="menu_wrap">
+        <div class="menu_wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
             <div class="menu_wrap_01">
 
                 <p class="contents_title_small">K’s BAKERY</p>
@@ -294,14 +290,16 @@
 
 
         <div class="pick_box">
-            <img class="pick_arrow" src="images/pick_arrow.png" alt="아래화살표">
-            <p class="contents_title_xsmall"><span>Pick your bread</span></p>
+            <div class="pick_motion" data-aos="fade-up" data-aos-duration="900" data-aos-delay="500">
+                <img class="pick_arrow" src="images/pick_arrow.png" alt="아래화살표">
+                <p class="contents_title_xsmall"><span>Pick your bread</span></p>
+            </div>
         </div><!-- pick_box -->
 
 
     </section><!-- menu -->
 
-    <section class="hand_made">
+    <section class="hand_made" data-aos="fade-up" data-aos-duration="1000">
 
         <p class="contents_title_xlarge">HAND MADE <br> BAKERY</p>
 
@@ -329,7 +327,8 @@
 
         <a href="#project_preview" class="urbanbrand_box bread_btn" data-title="04. URBANBRAND"
             data-img="images/urbanbrand_home.jpg"
-            data-desc="도시브랜드연구소가 개발한 한글 서체와 도시 정체성이 드러나도록, 주요 프로젝트와 콘텐츠를 중심으로 구성했습니다." data-link="https://jukdaman.github.io/redesign-urbanbrand/vom16_urbanbrand/#">
+            data-desc="도시브랜드연구소가 개발한 한글 서체와 도시 정체성이 드러나도록, 주요 프로젝트와 콘텐츠를 중심으로 구성했습니다."
+            data-link="https://jukdaman.github.io/redesign-urbanbrand/vom16_urbanbrand/#">
 
             <span class="contents_title_xxsmall">04. URBANBRAND</span>
             <img src="images/urbanbrand.png" alt="도시브랜드연구소">
@@ -346,7 +345,7 @@
 
     </section><!-- hand_made -->
 
-    <section class="project" id="project_preview">
+    <section class="project" id="project_preview" data-aos="fade-up">
 
         <p class="contents_title_medium" id="project_title">01. MUJI</p>
 
@@ -369,7 +368,7 @@
 
     </section><!-- project -->
 
-    <footer>
+    <footer data-aos="fade-up" data-aos-duration="1500">
         <div class="footer_main_text_wrap">
             <p class="contents_title_xlarge">MAKING IT BETTER, <br> STEP BY STEP.</p>
             <p class="contents_article_large">직접 만들어 보고 다듬으며, 조금씩 더 나은 방향을 찾아갑니다.</p>
@@ -399,6 +398,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+    <!-- script -->
+    <script src="js/aos.js"></script>
+    <script src="js/aos_script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 

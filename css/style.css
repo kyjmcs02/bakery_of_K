@@ -1,3 +1,6 @@
+html { scroll-behavior: smooth; }
+
+
 /* font title */
 .contents_title_xxsmall { font-family: "DM Serif Display", serif; font-size: 25px; font-weight: 400; letter-spacing: -1px; color: #333;}
 .contents_title_xsmall { font-family: "DM Serif Display", serif; font-size: 30px; font-weight: 400; letter-spacing: -1px; color: #333;}
@@ -13,6 +16,11 @@
 .contents_article_medium { font-size: 16px; font-weight: 400; letter-spacing: -0.5px; color: #333;}
 .contents_article_large { font-size: 25px; font-weight: 300; letter-spacing: -1px; color: #333;}
 
+/* main */
+
+/* main_img_box */
+/* main */
+
 /* main_img_box */
 @keyframes popUp {
     0% {
@@ -24,6 +32,37 @@
         transform: translateY(0);
     }
 }
+
+/* 크로와상 이미지 박스들 애니메이션 */
+.main_img_01, .main_img_02, .main_img_03, 
+.main_img_04, .main_img_05 {
+    opacity: 0;
+    animation: mainPopUp 0.6s ease-out forwards;
+}
+/* 등장순서 */
+.main_img_01 { animation-delay: 0.1s; }
+.main_img_02 { animation-delay: 0.3s; }
+.main_img_03 { animation-delay: 0.6s; }
+.main_img_04 { animation-delay: 0.9s; }
+.main_img_05 { animation-delay: 1.2s; }
+
+
+/* 크로와상_05번 흔들리는 동작 정의 */
+@keyframes main_img_05 {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-2.5deg); } /* 왼쪽으로 */
+    50% { transform: rotate(2.5deg); } /* 오른쪽으로 */
+    75% { transform: rotate(-2.5deg); } /* 다시 왼쪽으로 */
+    100% { transform: rotate(0deg); } /* 제자리 */
+}
+
+/* 마지막 빵에 마우스 올렸을 때 실행하기 */
+.main_img_05:hover img {
+    /* animation: [대본이름] [시간] [가속도] [반복여부] */
+    animation: main_img_05 0.6s ease-in-out infinite;
+    cursor: pointer;
+}
+/* main 끝 */
 
 /* 크로와상 이미지 박스들 애니메이션 */
 .main_img_01, .main_img_02, .main_img_03, 
@@ -55,6 +94,10 @@
     animation: main_img_05 0.6s ease-in-out infinite;
     cursor: pointer;
 }
+/* main 끝 */
+
+
+
 
 /* ksbakery 글씨 몰아두기 */
 .ksbakery_img_wrap .contents_title_xlarge,

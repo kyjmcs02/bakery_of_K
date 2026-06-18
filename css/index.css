@@ -129,6 +129,8 @@ html, body, *, a, button, a:hover, button:hover,
 
 .menu_wrap_02 .contents_title_small { width: 100%; text-align: center; margin: 0; }
 
+.pick_motion { width: 100%; display: flex; flex-direction: column; align-items: center; }
+
 /* menu 끝 */
 
 /* hand_made 시작 */
