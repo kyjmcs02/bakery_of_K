@@ -19,18 +19,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    // 프로젝트 클릭 데이터
+// 프로젝트 클릭 데이터
 
-    const bread_btns = document.querySelectorAll(".bread_btn");
+const bread_btns = document.querySelectorAll(".bread_btn");
 
-    const project_title = document.querySelector("#project_title");
-    const project_img = document.querySelector("#project_img");
-    const project_desc = document.querySelector("#project_desc");
-    const project_link = document.querySelector("#project_link");
-    const project_preview = document.querySelector("#project_preview");
-    const project_screen_box = document.querySelector(".project_screen_box");
+const project_title = document.querySelector("#project_title");
+const project_img = document.querySelector("#project_img");
+const project_desc = document.querySelector("#project_desc");
+const project_link = document.querySelector("#project_link");
+const project_preview = document.querySelector("#project_preview");
+const project_screen_box = document.querySelector(".project_screen_box");
 
-   bread_btns.forEach(function (btn) {
+bread_btns.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
         e.preventDefault();
 
@@ -49,6 +49,18 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }, 100);
     });
+});
+
+// VIEW PROJECT 클릭 시 실제 링크 열기
+project_link.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const link = project_link.getAttribute("href");
+
+    if (link && link !== "#") {
+        window.open(link, "_blank");
+    }
 });
 
     /* footer */

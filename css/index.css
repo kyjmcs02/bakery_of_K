@@ -167,9 +167,11 @@ html, body, *, a, button, a:hover, button:hover,
 .project_contents_text_wrap { width: 740px; position: absolute; right: 240px; bottom: 21px; text-align: right; z-index: 5;}
 
 
-.project .view_box { display: flex; justify-content: flex-end; align-items: center; gap: 10px; }
+.project .view_box { display: inline-flex; justify-content: flex-end; align-items: center; gap: 10px; cursor: pointer; }
 
 .view_box img { width: 40px; height: auto; display: block; }
+
+.view_box img, .view_box p { pointer-events: none; }
 
 /* project 끝 */
 
