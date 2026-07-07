@@ -31,7 +31,7 @@ const project_preview = document.querySelector("#project_preview");
 const project_screen_box = document.querySelector(".project_screen_box");
 
 // 처음 화면이 MUJI라서, VIEW PROJECT 기본 링크도 MUJI로 연결
-project_link.href = bread_btns[0].dataset.link;
+
 
 bread_btns.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
