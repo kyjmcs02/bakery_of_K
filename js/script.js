@@ -30,6 +30,9 @@ const project_link = document.querySelector("#project_link");
 const project_preview = document.querySelector("#project_preview");
 const project_screen_box = document.querySelector(".project_screen_box");
 
+// 처음 화면이 MUJI라서, VIEW PROJECT 기본 링크도 MUJI로 연결
+project_link.href = bread_btns[0].dataset.link;
+
 bread_btns.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
         e.preventDefault();
@@ -50,19 +53,6 @@ bread_btns.forEach(function (btn) {
         }, 100);
     });
 });
-
-// VIEW PROJECT 클릭 시 실제 링크 열기
-project_link.addEventListener("click", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const link = project_link.getAttribute("href");
-
-    if (link && link !== "#") {
-        window.open(link, "_blank");
-    }
-});
-
     /* footer */
 
     /* footer */
